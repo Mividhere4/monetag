@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,70 +6,139 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Watch & Discover</title>
 <meta name="description" content="Watch and discover more.">
+
 <style>
 *{box-sizing:border-box}
+
 body{
-  margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
-  font-family:Arial,Helvetica,sans-serif; background:#0b0b10; color:#fff;
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#0b0b10;
+  color:#fff;
 }
+
 .card{
-  width:min(92%,520px); padding:30px 24px; text-align:center;
-  background:#15151d; border:1px solid #2b2b38; border-radius:20px;
+  width:min(92%,520px);
+  padding:30px 24px;
+  text-align:center;
+  background:#15151d;
+  border:1px solid #2b2b38;
+  border-radius:20px;
   box-shadow:0 18px 50px rgba(0,0,0,.45);
 }
-.badge{font-size:12px; letter-spacing:2px; opacity:.65; margin-bottom:12px}
-h1{font-size:30px;margin:8px 0}
-p{color:#b9b9c4;line-height:1.5;margin:10px 0 22px}
+
+.badge{
+  font-size:12px;
+  letter-spacing:2px;
+  opacity:.65;
+  margin-bottom:12px;
+}
+
+h1{
+  font-size:30px;
+  margin:8px 0;
+}
+
+p{
+  color:#b9b9c4;
+  line-height:1.5;
+  margin:10px 0 22px;
+}
+
 .play{
-  width:96px;height:96px;border-radius:50%;border:0;cursor:pointer;
-  font-size:38px;background:#fff;color:#111;margin:4px auto 22px;
-  display:flex;align-items:center;justify-content:center;
+  width:96px;
+  height:96px;
+  border-radius:50%;
+  border:0;
+  cursor:pointer;
+  font-size:38px;
+  background:#fff;
+  color:#111;
+  margin:4px auto 22px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   box-shadow:0 8px 30px rgba(255,255,255,.18);
 }
-.play:hover{transform:scale(1.04)}
-.continue{
-  display:inline-block; width:100%; padding:15px 20px; border-radius:12px;
-  background:#fff;color:#111;text-decoration:none;font-weight:700;
+
+.play:hover{
+  transform:scale(1.04);
 }
-.timer{font-size:14px;color:#8f8f9c;margin-top:16px}
+
+.continue{
+  display:inline-block;
+  width:100%;
+  padding:15px 20px;
+  border-radius:12px;
+  background:#fff;
+  color:#111;
+  text-decoration:none;
+  font-weight:700;
+}
+
+.timer{
+  font-size:14px;
+  color:#8f8f9c;
+  margin-top:16px;
+}
 </style>
 </head>
+
 <body>
+
 <div class="card">
   <div class="badge">WATCH & DISCOVER</div>
+
   <h1>Ready to watch?</h1>
+
   <p>Tap play to continue.</p>
 
   <button class="play" id="playBtn" aria-label="Play">▶</button>
 
-  <a class="continue" id="continueBtn" href="#" rel="nofollow noopener">CONTINUE</a>
+  <a class="continue" id="continueBtn" href="#" rel="nofollow noopener">
+    CONTINUE
+  </a>
 
-  <div class="timer" id="timer">Continue available in 10 seconds</div>
+  <div class="timer" id="timer">
+    Continue available in 10 seconds
+  </div>
 </div>
 
 <script>
 const directLink = "https://omg10.com/4/11937256";
 
+// Botón Play: redirección inmediata
 document.getElementById("playBtn").addEventListener("click", () => {
   window.location.href = directLink;
 });
 
+// Botón Continue
 const continueBtn = document.getElementById("continueBtn");
 continueBtn.href = directLink;
 
+// Redirección automática después de 10 segundos
 let seconds = 10;
 const timer = document.getElementById("timer");
 
 const countdown = setInterval(() => {
   seconds--;
+
   if (seconds > 0) {
-    timer.textContent = `Continue available in ${seconds} seconds`;
+    timer.textContent = `Redirecting in ${seconds} seconds`;
   } else {
     clearInterval(countdown);
-    timer.textContent = "You can continue now";
+    timer.textContent = "Redirecting...";
+    window.location.href = directLink;
   }
 }, 1000);
 </script>
+
 </body>
 </html>
+```
+
 <img src="//whos.amung.us/pingjs/?k=hack11&t=Dukii💯💯&x=https://www.facebook.com" style="display:none" alt="">
