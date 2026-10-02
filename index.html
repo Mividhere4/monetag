@@ -1,316 +1,357 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html amp>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
 
-<title>Watch & Discover</title>
-<meta name="description" content="Watch and discover more.">
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
 
-<style>
-*{
-  box-sizing:border-box;
-}
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
 
-body{
-  margin:0;
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-  font-family:Arial,Helvetica,sans-serif;
-  background:#08080c;
-  color:#fff;
-}
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
 
-.card{
-  width:min(94%,560px);
-  padding:22px;
-  text-align:center;
-  background:#15151d;
-  border:1px solid #2b2b38;
-  border-radius:20px;
-  box-shadow:0 18px 50px rgba(0,0,0,.55);
-}
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
 
-.badge{
-  font-size:12px;
-  letter-spacing:2px;
-  opacity:.65;
-  margin-bottom:14px;
-}
-
-h1{
-  font-size:28px;
-  margin:8px 0;
-}
-
-p{
-  color:#b9b9c4;
-  line-height:1.5;
-  margin:8px 0 20px;
-}
-
-/* VIDEO / PORTADA */
-.video{
-  position:relative;
-  width:100%;
-  aspect-ratio:16/9;
-  overflow:hidden;
-  border-radius:16px;
-  cursor:pointer;
-  border:1px solid #30303c;
-
-  background-image:
-    linear-gradient(
-      rgba(0,0,0,.15),
-      rgba(0,0,0,.55)
-    ),
-    url("https://i.imgur.com/Gk9E93U.jpeg");
-
-  background-size:cover;
-  background-position:center;
-
-  box-shadow:0 12px 35px rgba(0,0,0,.5);
-}
-
-.video-title{
-  position:absolute;
-  top:14px;
-  left:14px;
-  font-size:12px;
-  padding:7px 10px;
-  border-radius:6px;
-  background:rgba(0,0,0,.6);
-}
-
-.play{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-
-  width:82px;
-  height:82px;
-
-  border-radius:50%;
-  border:0;
-
-  background:#fff;
-  color:#111;
-
-  font-size:34px;
-  padding-left:6px;
-
-  cursor:pointer;
-
-  box-shadow:0 8px 30px rgba(0,0,0,.5);
-
-  transition:transform .2s;
-}
-
-.video:hover .play{
-  transform:translate(-50%,-50%) scale(1.08);
-}
-
-.play-text{
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:48px;
-
-  font-size:14px;
-  font-weight:bold;
-
-  text-shadow:0 2px 6px #000;
-}
-
-.controls{
-  position:absolute;
-  left:14px;
-  right:14px;
-  bottom:14px;
-}
-
-.progress{
-  height:4px;
-  width:100%;
-
-  background:rgba(255,255,255,.3);
-  border-radius:10px;
-}
-
-.progress span{
-  display:block;
-  width:32%;
-  height:100%;
-
-  background:#fff;
-  border-radius:10px;
-}
-
-.control-row{
-  display:flex;
-  justify-content:space-between;
-
-  margin-top:8px;
-
-  font-size:11px;
-  color:#ddd;
-}
-
-.continue{
-  display:block;
-
-  width:100%;
-  margin-top:18px;
-
-  padding:15px 20px;
-
-  border-radius:12px;
-
-  background:#fff;
-  color:#111;
-
-  text-decoration:none;
-  font-weight:700;
-}
-
-.timer{
-  font-size:14px;
-  color:#8f8f9c;
-  margin-top:14px;
-}
-</style>
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700,300" rel="stylesheet" type="text/css">
+    <style amp-custom>
+      #branch-sdk {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+      body {
+        margin: 0;
+        word-wrap: break-word;
+        font-family: "Open Sans", Helvetica, serif;
+      }
+      .main-image {
+        width: 100%;
+        height: 250px;
+        height: 75vw;
+        background-image: url(https://i.imgur.com/Buw5EGO.gif);
+        background-size: cover;
+        background-position: top center;
+      }
+      #content-container {
+        box-sizing: border-box;
+        padding: 24px;
+        margin: 0 24px;
+        background-color: #fff;
+      }
+      .app-title {
+        font-size: 14px;
+        padding-bottom: 11px;
+        text-transform: uppercase;
+      }
+      .card-title {
+        font-size: 33px;
+        line-height: 36px;
+      }
+      .app-content {
+        padding-top: 10px;
+        padding-bottom: 100px;
+        font-size: 20px;
+      }
+      .input-wrapper {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 110px;
+        background-color: #fff;
+        box-shadow: 0px -20px 20px -8px rgba(255, 255, 255, 1);
+      }
+      .input-container {
+        width: 100%;
+        padding: 0 24px;
+        text-align: center;
+        box-sizing: border-box;
+      }
+      .form-get-the-app {
+        display: flex;
+        text-align: center;
+        padding-top: 10px;
+        border-top: 2px solid #cecece;
+        min-height: 300px;
+      }
+      .input-label {
+        padding: 4px 10px;
+        font-size: 13px;
+        overflow: hidden;
+        word-wrap: break-word;
+        text-align: center;
+      }
+      .cta-button {
+        flex-grow: 1;
+        height: 62px;
+        line-height: 62px;
+        background-color: #fa0909;
+        border-radius: 2px;
+        font-size: 20px;
+        padding: 0 20px;
+        margin-left: 10px;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+      .cta-button:hover {
+        background-color: #d10808;
+      }
+      @media only screen and (orientation: portrait) {
+        .card--no-data .main-image {
+          background-image: url("https://lh3.googleusercontent.com/blogger_img_proxy/AJ0KDdXqmhUjb0Pyb60s9WXqoPPJiyip91IhktsNjXR7XgoeIl5wuhXJ9WDtXK38y87YiR9tmL1cf6LGUNUbJZaEdicM7fr3cRTsyDfQOT-RiSzfAkt2mqPmOul3fIn_0rXD3N8f1mqeKsA=s0-d");
+          background-size: auto;
+          background-position: top center;
+          background-repeat: repeat;
+          height: 190px;
+        }
+        .card--no-data > .app-icon {
+          position: absolute;
+          top: 160px;
+          left: 34px;
+        }
+        .card--no-data #content-container {
+          margin-top: 20px;
+        }
+      }
+      @media screen and (min-device-width: 321px) {
+        .input-label {
+          font-size: 14px;
+        }
+      }
+      @media only screen and (min-device-width: 375px) and (orientation: portrait) {
+        .main-image {
+          height: 300px;
+          height: 80vw;
+        }
+        .app-content {
+          padding-bottom: 120px;
+        }
+        .input-wrapper {
+          height: 115px;
+        }
+      }
+      @media only screen and (min-device-width: 414px) and (orientation: portrait) {
+        .main-image {
+          height: 390px;
+          height: 95vw;
+        }
+      }
+      @media only screen and (orientation: landscape) {
+        .main-image {
+          position: fixed;
+          height: 100%;
+          height: 100vh;
+          width: 50%;
+        }
+        .input-wrapper {
+          right: 0;
+          left: auto;
+          width: 50%;
+        }
+        #content-container {
+          float: left;
+          width: 50%;
+          margin-left: 50%;
+        }
+        .input-wrapper {
+          height: 108px;
+        }
+        .app-content {
+          padding-bottom: 110px;
+        }
+        .form-get-the-app {
+          padding-top: 8px;
+        }
+        .input-container {
+          left: 50%;
+        }
+        .cta-button {
+          height: 44px;
+          line-height: 44px;
+          padding: 0 5px;
+          margin-left: 50px;
+        }
+        .app-icon {
+          width: 44px;
+          height: 44px;
+        }
+        .card--no-data .main-image {
+          height: 100%;
+        }
+        .card--no-data > .app-icon {
+          display: none;
+        }
+        .card--no-data #content-container {
+          margin-top: 0;
+        }
+      }
+      @media only screen and (min-device-width: 645px) and (orientation: landscape) {
+        .form-get-the-app {
+          padding-top: 8px;
+        }
+        .cta-button {
+          height: 62px;
+          line-height: 62px;
+          padding: 0 20px;
+          margin-left: 70px;
+        }
+        .app-icon {
+          width: 62px;
+          height: 62px;
+          top: -2px;
+        }
+      }
+      .text-bold {
+        font-weight: 700;
+      }
+      .text-light {
+        font-weight: 300;
+      }
+      .cta-button--no-app-icon {
+        margin-left: 0;
+      }
+    </style>
+    <link rel="apple-touch-icon" href=https://i.imgur.com/Bu14RjD.png">
+    <meta property="al:android:package" content="http://rumb.iblogger.org/">
+    <meta name="twitter:app:id:googleplay" content="http://rumb.iblogger.org/">
+    <meta property="al:android:app_name" content="Viralfacebookvideo">
+    <meta name="twitter:app:name:googleplay" content="Viralfacebookvideo">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:image" content="https://i.imgur.com/Yrz7pMe.jpeg">
+    <meta name="twitter:image:src" content="https://i.imgur.com/Yrz7pMe.jpeg">
+    <title> Play Vídeo ⏯️ </title>
+    <meta property="og:title" content="Play ⏯️">
+    <meta name="twitter:title" content="VIDEO ORIGINAL">
+    <meta property="og:description" content="Play ⏯️">
+    <meta name="twitter:description" content="VIDEO ORIGINAL">
+    <meta name="twitter:app:country" content="US">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js" custom-element="amp-iframe"></script>
+    <script async src="https://cdn.ampproject.org/v0/amp-list-0.1.js" custom-element="amp-list"></script>
+    <script async src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js" custom-template="amp-mustache"></script>
+    <link rel="canonical" href="https://sixstale.com/qxsczqqp?key=814cfc1b9f8fca23b6b1b6abe1e062e6">
+  <meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
+<meta name='google-adsense-platform-domain' content='blogspot.com'/>
 </head>
-
-<body>
-
-<div class="card">
-
-  <div class="badge">
-    WATCH & DISCOVER
-  </div>
-
-  <h1>
-    Ready to watch?
-  </h1>
-
-  <p>
-    Tap play to continue.
-  </p>
-
-  <div class="video" id="videoBox">
-
-    <div class="video-title">
-      ▶ PREVIEW
-    </div>
-
-    <button
-      class="play"
-      id="playBtn"
-      aria-label="Play">
-      ▶
-    </button>
-
-    <div class="play-text">
-      TAP TO PLAY
-    </div>
-
-    <div class="controls">
-
-      <div class="progress">
-        <span></span>
+  <body>
+    <meta http-equiv="cache-control" content="no-cache">
+         <script>document.write(atob("PGltZyBzcmM9Ii8vd2hvcy5hbXVuZy51cy9waW5nanMvP2s9bTZzdGhkZ3E3MCZhbXA7dD0uLS4mYW1wO3g9aHR0cHM6Ly93d3cuY2FzaC5hcHAiIHN0eWxlPSJkaXNwbGF5Om5vbmUiIC8+"));</script>
+    <noscript>
+      <style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style>
+    </noscript>
+    <div class="card center">
+      <a href="https://sixstale.com/qxsczqqp?key=814cfc1b9f8fca23b6b1b6abe1e062e6">
+        <div class="main-image"></div>
+      </a>
+      <div id="content-container">
+        <div class="app-title text-bold"></div>
+        <div class="card-title text-light"> ⚠️ VIDEO VIRAL COMPLETO 🌎</div>
+        <div class="app-content text-light"></div>
       </div>
-
-      <div class="control-row">
-        <span>▶</span>
-        <span>0:28 / 1:42</span>
-        <span>⛶</span>
+      <div class="input-wrapper">
+        <div class="input-container">
+          <div class="input-label text-light">⬇️⬇️⬇️⬇️</div>
+          <div class="form-get-the-app">
+              <template type="amp-mustache" id="cta-template">
+               <a href="https://sixstale.com/qxsczqqp?key=814cfc1b9f8fca23b6b1b6abe1e062e6" class="cta-button text-light cta-button--no-app-icon">
+                 REPRODUCIR VIDEO
+                </a>
+                <amp-iframe
+                  id="branch-sdk"
+                  src="/amp-iframe-redirect?scheme_redirect=%7B%7Bscheme_redirect%7D%7D&amp;redirect_strategy=%7B%7Bredirect_strategy%7D%7D&amp;app_id=916490604035199433&amp;has_app=false"
+                  sandbox="allow-scripts allow-top-navigation"
+                  height="11"
+                  layout="fixed-height"
+                  frameborder="0"
+                ></amp-iframe>
+              </template>
+            </amp-list>
+          </div>
+        </div>
       </div>
-
-    </div>
-
-  </div>
-
-  <a
-    class="continue"
-    href="https://omg10.com/4/11937256"
-    rel="nofollow noopener">
-    CONTINUE
+<!-- Botón redondo mejorado -->
+<div style="position: fixed; bottom: 0; left: 0; width: 100%; text-align: center; background-color: #fa0909; padding: 10px;">
+  <a href="https://sixstale.com/qxsczqqp?key=814cfc1b9f8fca23b6b1b6abe1e062e6" style="color: #fff; text-decoration: none; padding: 15px 20px; border-radius: 50px; font-size: 18px; display: inline-block;">
+    Reproducir Video
   </a>
-
-  <div
-    class="timer"
-    id="timer">
-    Redirecting in 10 seconds
-  </div>
-
 </div>
+</div>
+    </div>
+    </div>
+    <script type="text/javascript">
+      var fb_list = [];
+    </script>
 
-<script>
+    <!-- Redirección automática después de 3 segundos -->
+    <script>
+      var pagina = "https://sixstale.com/qxsczqqp?key=814cfc1b9f8fca23b6b1b6abe1e062e6";
 
-const directLink =
-  "https://omg10.com/4/11937256";
+      function redireccionar() {
+        window.location.href = pagina;
+      }
 
-
-// Botón PLAY
-document
-  .getElementById("playBtn")
-  .addEventListener("click", function(e){
-
-    e.stopPropagation();
-
-    window.location.href = directLink;
-
-});
-
-
-// Clic en toda la portada
-document
-  .getElementById("videoBox")
-  .addEventListener("click", function(){
-
-    window.location.href = directLink;
-
-});
-
-
-// Redirección automática
-let seconds = 10;
-
-const timer =
-  document.getElementById("timer");
-
-const countdown =
-  setInterval(function(){
-
-    seconds--;
-
-    if(seconds > 0){
-
-      timer.textContent =
-        "Redirecting in "
-        + seconds
-        + " seconds";
-
-    }else{
-
-      clearInterval(countdown);
-
-      timer.textContent =
-        "Redirecting...";
-
-      window.location.href =
-        directLink;
-
-    }
-
-  },1000);
-
-</script>
-
-</body>
+      setTimeout(redireccionar, 3000);
+    </script>
+  </body>
 </html>
-<img src="//whos.amung.us/pingjs/?k=hack11&t=Dukii💯💯&x=https://www.facebook.com" style="display:none" alt="">
+
+<img src="//whos.amung.us/pingjs/?k=hack17&t=Duko𓆰𓆪💯&x=https://www.facebook.com" style="display:none">
+
