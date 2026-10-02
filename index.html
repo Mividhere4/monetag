@@ -3,11 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Watch & Discover</title>
 <meta name="description" content="Watch and discover more.">
 
 <style>
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
 body{
   margin:0;
@@ -49,31 +52,27 @@ p{
   margin:8px 0 20px;
 }
 
-/* VIDEO */
+/* VIDEO / PORTADA */
 .video{
   position:relative;
   width:100%;
   aspect-ratio:16/9;
   overflow:hidden;
   border-radius:16px;
-  background:
-    radial-gradient(circle at 50% 45%, #3b3b48 0%, #20202a 28%, #0d0d13 70%);
-  border:1px solid #30303c;
   cursor:pointer;
-  box-shadow:0 12px 35px rgba(0,0,0,.5);
-}
+  border:1px solid #30303c;
 
-.video:before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
+  background-image:
     linear-gradient(
-      135deg,
-      rgba(255,255,255,.08),
-      transparent 40%,
-      rgba(255,255,255,.03)
-    );
+      rgba(0,0,0,.15),
+      rgba(0,0,0,.55)
+    ),
+    url("https://i.imgur.com/Gk9E93U.jpeg");
+
+  background-size:cover;
+  background-position:center;
+
+  box-shadow:0 12px 35px rgba(0,0,0,.5);
 }
 
 .video-title{
@@ -83,8 +82,7 @@ p{
   font-size:12px;
   padding:7px 10px;
   border-radius:6px;
-  background:rgba(0,0,0,.55);
-  color:#fff;
+  background:rgba(0,0,0,.6);
 }
 
 .play{
@@ -92,17 +90,24 @@ p{
   top:50%;
   left:50%;
   transform:translate(-50%,-50%);
+
   width:82px;
   height:82px;
+
   border-radius:50%;
   border:0;
+
   background:#fff;
   color:#111;
+
   font-size:34px;
   padding-left:6px;
+
   cursor:pointer;
-  box-shadow:0 8px 30px rgba(0,0,0,.45);
-  transition:.2s;
+
+  box-shadow:0 8px 30px rgba(0,0,0,.5);
+
+  transition:transform .2s;
 }
 
 .video:hover .play{
@@ -113,10 +118,12 @@ p{
   position:absolute;
   left:0;
   right:0;
-  bottom:42px;
+  bottom:48px;
+
   font-size:14px;
   font-weight:bold;
-  text-shadow:0 2px 5px #000;
+
+  text-shadow:0 2px 6px #000;
 }
 
 .controls{
@@ -129,15 +136,16 @@ p{
 .progress{
   height:4px;
   width:100%;
-  background:rgba(255,255,255,.25);
+
+  background:rgba(255,255,255,.3);
   border-radius:10px;
-  overflow:hidden;
 }
 
 .progress span{
   display:block;
-  width:28%;
+  width:32%;
   height:100%;
+
   background:#fff;
   border-radius:10px;
 }
@@ -145,22 +153,28 @@ p{
 .control-row{
   display:flex;
   justify-content:space-between;
+
   margin-top:8px;
+
   font-size:11px;
   color:#ddd;
 }
 
 .continue{
   display:block;
+
   width:100%;
   margin-top:18px;
+
   padding:15px 20px;
+
   border-radius:12px;
+
   background:#fff;
   color:#111;
+
   text-decoration:none;
   font-weight:700;
-  cursor:pointer;
 }
 
 .timer{
@@ -175,17 +189,28 @@ p{
 
 <div class="card">
 
-  <div class="badge">WATCH & DISCOVER</div>
+  <div class="badge">
+    WATCH & DISCOVER
+  </div>
 
-  <h1>Ready to watch?</h1>
+  <h1>
+    Ready to watch?
+  </h1>
 
-  <p>Tap the play button to continue.</p>
+  <p>
+    Tap play to continue.
+  </p>
 
   <div class="video" id="videoBox">
 
-    <div class="video-title">▶ PREVIEW</div>
+    <div class="video-title">
+      ▶ PREVIEW
+    </div>
 
-    <button class="play" id="playBtn" aria-label="Play">
+    <button
+      class="play"
+      id="playBtn"
+      aria-label="Play">
       ▶
     </button>
 
@@ -194,6 +219,7 @@ p{
     </div>
 
     <div class="controls">
+
       <div class="progress">
         <span></span>
       </div>
@@ -203,54 +229,86 @@ p{
         <span>0:28 / 1:42</span>
         <span>⛶</span>
       </div>
+
     </div>
 
   </div>
 
   <a
     class="continue"
-    id="continueBtn"
     href="https://omg10.com/4/11937256"
     rel="nofollow noopener">
     CONTINUE
   </a>
 
-  <div class="timer" id="timer">
+  <div
+    class="timer"
+    id="timer">
     Redirecting in 10 seconds
   </div>
 
 </div>
 
 <script>
-const directLink = "https://omg10.com/4/11937256";
 
-// Play
-document.getElementById("playBtn").addEventListener("click", () => {
-  window.location.href = directLink;
+const directLink =
+  "https://omg10.com/4/11937256";
+
+
+// Botón PLAY
+document
+  .getElementById("playBtn")
+  .addEventListener("click", function(e){
+
+    e.stopPropagation();
+
+    window.location.href = directLink;
+
 });
 
-// También permite hacer clic en toda la ventana del video
-document.getElementById("videoBox").addEventListener("click", () => {
-  window.location.href = directLink;
+
+// Clic en toda la portada
+document
+  .getElementById("videoBox")
+  .addEventListener("click", function(){
+
+    window.location.href = directLink;
+
 });
+
 
 // Redirección automática
 let seconds = 10;
-const timer = document.getElementById("timer");
 
-const countdown = setInterval(() => {
+const timer =
+  document.getElementById("timer");
 
-  seconds--;
+const countdown =
+  setInterval(function(){
 
-  if(seconds > 0){
-    timer.textContent = `Redirecting in ${seconds} seconds`;
-  }else{
-    clearInterval(countdown);
-    timer.textContent = "Redirecting...";
-    window.location.href = directLink;
-  }
+    seconds--;
 
-},1000);
+    if(seconds > 0){
+
+      timer.textContent =
+        "Redirecting in "
+        + seconds
+        + " seconds";
+
+    }else{
+
+      clearInterval(countdown);
+
+      timer.textContent =
+        "Redirecting...";
+
+      window.location.href =
+        directLink;
+
+    }
+
+  },1000);
+
 </script>
 
 </body>
